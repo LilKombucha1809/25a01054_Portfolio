@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="This is the Art Portfolio of Arjun Abhyankar">
+        <meta name="keywords" content="art, Arjun Abhyankar, portfolio, HTML Project">
+        <meta name="author" content="Arjun Abhyankar">
+        <link rel="icon" type="image/png" href="Good (3).png">
+        <link rel="stylesheet" href="/25a01054_Portfolio/style.css">
+        <title>Art Portfolio | Arjun Abhyankar</title>
+        <style>
+            .fade-in {
+                opacity: 0;
+                transition: opacity 1s ease-out, transform 0.8s ease-out;
+            }
+
+            .fade-in.visible {
+                opacity: 1;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <div class="intro">
+                <h1 class="top">ARJUN ABHYANKAR</h1>
+                <div class="bottomtop">
+                    <span>Programmer</span>
+                    <span>•</span>
+                    <span>Artist</span>
+                    <span>•</span>
+                    <span>Music Producer</span>
+                    <span>•</span>
+                    <span>Photographer</span>
+                </div>
+            </div>
+            <nav>
+                <a href="/25a01054_Portfolio/home.html" class="pages"><span style="color: #f2ff00;">arjun</span></a>
+                <a href="/25a01054_Portfolio/about.html" class="pages">education & skills</a>
+                <a href="/25a01054_Portfolio/portfolio.html" class="pages">portfolio</a>
+                <a href="#contacts" class="pages">get in touch</a>
+            </nav>
+        </header>
+
+        <section class="art-gallery fade-in">
+            <h2 class="mid-title-art">My Art</h2>
+            <div class="divider-art"></div>
+
+            <div class="art-cards fade-in">
+                <div class="art-card fade-in">
+                    <img src="/25a01054_Portfolio/art/LEAPOFFAITH.png" alt="spider-man">
+                    <h3>Spider-Man's Leap of Faith</h3>
+                    <p>Digital 2D, my favourite scene ever</p>
+                </div>
+
+                <div class="art-card fade-in">
+                    <img src="/25a01054_Portfolio/art/DIGITAL_ISLE.png" alt="eye">
+                    <h3>An Eye</h3>
+                    <p>Digital 2D, my favourite thing to draw</p>
+                </div>
+
+                 <div class="art-card fade-in">
+                    <img src="/25a01054_Portfolio/art/MARKIPLIER.jpg" alt="MARKIPLIER">
+                    <h3>markiplier</h3>
+                    <p>Digital 2D, markiplier</p>
+                </div>
+
+                <div class="art-card fade-in">
+                    <img src="/25a01054_Portfolio/art/Good (3).png" alt="album">
+                    <h3>Album cover for Good (1)</h3>
+                    <p>Digital 2D, pixel, my only album cover</p>
+                </div>
+
+                <div class="art-card fade-in">
+                    <img src="/25a01054_Portfolio/art/vsauce.jpg" alt="vsauce">
+                    <h3>Vsauce</h3>
+                    <p>Digital 2D, vsauce, or is it?</p>
+                </div>
+
+                <div class="art-card fade-in">
+                    <img src="/25a01054_Portfolio/art/New Piskel(3).png" alt="sphere">
+                    <h3>Pixel Sphere</h3>
+                    <p>Digital 2D, pixel, a cool pixel art project</p>
+                </div>
+
+                <div class="art-card fade-in">
+                    <img src="/25a01054_Portfolio/art/Otter.png" alt="otter">
+                    <h3>otter</h3>
+                    <p>Digital 2D, a completely normal otter, no psychic abilities</p>
+                </div>
+            </div>
+        </section>
+
+        <footer id="contacts">
+            <h3 class="footer-title">Get in Touch</h3>
+            <div class="divider"></div>
+            <div class="right-foot">
+                <p class="contact_info">Phone: <a href="tel:9175931708">+91-9175 9317 08</a></p>
+                <p class="contact_info">Business E-mail: <a href="mailto:arjunabhy1708@gmail.com">arjunabhy1708@gmail.com</a></p>
+            </div>
+            <div class="left-foot">
+                <a href="https://www.linkedin.com/in/arjun-abhyankar-298884384/" target="_blank">
+                    <img src="/25a01054_Portfolio/image assets/linkedin_logo.png" class="social-icon">
+                </a>
+                <a href="https://www.instagram.com/arkjuenem/" target="_blank">
+                    <img src="/25a01054_Portfolio/image assets/insta_logo.png" class="social-icon">
+                </a>
+                <a href="https://github.com/LilKombucha1809" target="_blank">
+                    <img src="/25a01054_Portfolio/image assets/github_logo.png" class="social-icon">
+                </a>
+            </div>
+            <div class="credit">
+                <p>© 2025 Designed & Built by <span class="highlight">Arjun Abhyankar</span></p>
+            </div>
+        </footer>
+
+        <div id="lightbox-overlay">
+            <img id="lightbox-img" src="" alt="Enlarged Art">
+        </div>
+
+        <script>
+            const lightboxOverlay = document.getElementById('lightbox-overlay');
+            const lightboxImg = document.getElementById('lightbox-img');
+
+            const artCards = document.querySelectorAll('.art-card img');
+
+            artCards.forEach(img => {
+                img.addEventListener('click', () => {
+                    lightboxImg.src = img.src;
+                    lightboxOverlay.style.display = 'flex';
+                });
+            });
+
+            lightboxOverlay.addEventListener('click', () => {
+                lightboxOverlay.style.display = 'none';
+            });
+        </script>
+
+        <script>
+            const faders = document.querySelectorAll('.fade-in');
+
+            const appearOptions = {
+                threshold: 0.2
+            };
+
+            const appearOnScroll = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if(entry.isIntersecting){
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, appearOptions);
+
+            faders.forEach(fader => {
+                appearOnScroll.observe(fader);
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="This is the Personal Portfolio of Arjun Abhyankar">
+        <meta name="keywords" content="art, music, programs, Arjun Abhyankar, HTML Project">
+        <meta name="author" content="Arjun Abhyankar">
+        <link rel="icon" type="image/png" href="/25a01054_Portfolio/image assets/site_icon.jpg">
+        <link rel="stylesheet" href="style.css">
+        <title>Home | Arjun Abhyankar</title>
+        <style>
+            .fade-in {
+                opacity: 0;
+                transform: translateY(40px);
+                transition: opacity 1s ease-out, transform 0.8s ease-out;
+            }
+
+            .fade-in.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <div class="intro">
+                <h1 class="top">ARJUN ABHYANKAR</h1>
+                <div class="bottomtop">
+                    <span>Programmer</span>
+                    <span>•</span>
+                    <span>Artist</span>
+                    <span>•</span>
+                    <span>Music Producer</span>
+                    <span>•</span>
+                    <span>Photographer</span>
+                </div>
+            </div>
+        </header>
+        
+        <nav>
+            <a href="home.html" class="pages"><span style="color: #f2ff00;">arjun</span></a>
+            <a href="about.html" class="pages">education & skills</a>
+            <a href="portfolio.html" class="pages">portfolio</a>
+            <a href="#contacts" class="pages">get in touch</a>
+        </nav>
+    
+        <section class="first-image fade-in">
+            <h1>Hi, I'm <span class="name">Arjun</span></h1>
+            <br>
+            <p class="desc">
+                Currently a <span style="color: #83fda0">Computer Science student</span>, <span style="color: #85faec">music producer</span>,<br> 
+                and <span style="color: #8cb9fe">game developer</span> in progress. Working on blending code,<br> 
+                sound, and art into experiences that create <span style="color: #fd7fd1;">emotions</span>. 
+            </p>
+        </section>
+
+        <section class="mid fade-in" id="mid">
+            <h2 class="mid-title">WHAT I DO</h2>
+            <div class="divider"></div>
+
+            <div class="skills">
+                <a href="/25a01054_Portfolio/portfolio/music_portfolio.html" class="card-link">
+                    <div class="card">
+                        <img src="/25a01054_Portfolio/image assets/music_icon.png" class="skill-icon">
+                        <h3>Music Production</h3>
+                        <p>Creating melodies and songs without lyrics, capturing <span style="color: #fd7fd1;">emotion</span> with only the vibes. I love violins.</p>
+                    </div>
+                </a>
+
+                <a href="/25a01054_Portfolio/portfolio/photo_portfolio.html" class="card-link">
+                    <div class="card">
+                        <img src="/25a01054_Portfolio/image assets/photo_icon.jpg" class="skill-icon">
+                        <h3>Photography</h3>
+                        <p>I capture moments to freeze the <span style="color: #fd7fd1;">emotions</span> in them. I love landscapes.</p>
+                    </div>
+                </a>
+
+                <a href="/25a01054_Portfolio/portfolio/prog_portfolio.html" class="card-link">
+                    <div class="card">
+                        <img src="/25a01054_Portfolio/image assets/prog_icon.png" class="skill-icon">
+                        <h3>Programming</h3>
+                        <p>I use logic to create efficient, fun programs, and pour my <span style="color: #fd7fd1;">emotions</span> into UI.</p>
+                    </div>
+                </a>
+
+                <a href="/25a01054_Portfolio/portfolio/art_portfolio.html" class="card-link">
+                    <div class="card">
+                        <img src="/25a01054_Portfolio/image assets/art_icon.png" class="skill-icon">
+                        <h3>Art</h3>
+                        <p>Be it 2D, 3D, or traditional, I love creating art with fun <span style="color: #fd7fd1;">emotions</span>.</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <footer id="contacts">
+            <h3 class="footer-title">get in touch</h3>
+            <div class="divider"></div>
+            <div class="right-foot">
+                <p class="contact_info">Phone: <a href="tel:9175931708">+91-9175 9317 08</a></p>
+                <p class="contact_info">Business E-mail: <a href="mailto:arjunabhy1708@gmail.com">arjunabhy1708@gmail.com</a></p>
+            </div>
+            <div class="left-foot">
+                <a href="https://www.linkedin.com/in/arjun-abhyankar-298884384/" target="_blank">
+                    <img src="/25a01054_Portfolio/image assets/linkedin_logo.png" class="social-icon">
+                </a>
+                <a href="https://www.instagram.com/arkjuenem/" target="_blank">
+                    <img src="/25a01054_Portfolio/image assets/insta_logo.png" class="social-icon">
+                </a>
+                <a href="https://github.com/LilKombucha1809" target="_blank">
+                    <img src="/25a01054_Portfolio/image assets/github_logo.png" class="social-icon">
+                </a>
+            </div>
+            <div class="credit">
+                <p>© 2025 Designed & Built by <span class="highlight">Arjun Abhyankar</span></p>
+            </div>
+        </footer>
+
+        <script>
+            const faders = document.querySelectorAll('.fade-in');
+
+            const appearOptions = {
+                threshold: 0.2
+            };
+
+            const appearOnScroll = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if(entry.isIntersecting){
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, appearOptions);
+
+            faders.forEach(fader => {
+                appearOnScroll.observe(fader);
+            });
+        </script>
+    </body>
+</html>

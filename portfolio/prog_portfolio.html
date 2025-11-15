@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="This is the Personal Portfolio of Arjun Abhyankar">
+        <meta name="keywords" content="art, music, programs, Arjun Abhyankar, HTML Project">
+        <meta name="author" content="Arjun Abhyankar">
+        <link rel="icon" type="image/png" href="Good (3).png">
+        <link rel="stylesheet" href="/25a01054_Portfolio/style.css">
+        <title>Programming Portfolio | Arjun Abhyankar</title>
+        <style>
+            .fade-in {
+                opacity: 0;
+                transition: opacity 1s ease-out, transform 0.8s ease-out;
+            }
+
+            .fade-in.visible {
+                opacity: 1;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <div class="intro">
+                <h1 class="top">ARJUN ABHYANKAR</h1>
+                <div class="bottomtop">
+                    <span>Programmer</span>
+                    <span>•</span>
+                    <span>Artist</span>
+                    <span>•</span>
+                    <span>Music Producer</span>
+                    <span>•</span>
+                    <span>Photographer</span>
+                </div>
+            </div>
+            <nav>
+                <a href="/25a01054_Portfolio/home.html" class="pages"><span style="color: #f2ff00;">arjun</span></a>
+                <a href="/25a01054_Portfolio/about.html" class="pages">education & skills</a>
+                <a href="/25a01054_Portfolio/portfolio.html" class="pages">portfolio</a>
+                <a href="#contacts" class="pages">get in touch</a>
+            </nav>
+        </header>
+
+        <section class="prog-gallery fade-in">
+            <h2 class="mid-title-prog">Programming Projects</h2>
+            <div class="divider-prog"></div>
+
+            <div class="prog-cards fade-in">
+                <div class="prog-card fade-in">
+                    <h3>My Personal Portfolio Website</h3>
+                    <p>This website you are viewing! Built with HTML, CSS, and a little JS for interactivity.  
+                    Fully responsive and includes music, photography, art, and programming showcases.</p>
+                    <p>Tech Stack: HTML, CSS, JavaScript</p>
+                    <a href="https://github.com/LilKombucha1809" target="_blank" class="prog-link">View on GitHub</a>
+                </div>
+            </div>
+        </section>
+
+        <footer id="contacts">
+            <h3 class="footer-title">Get in Touch</h3>
+            <div class="divider"></div>
+            <div class="right-foot">
+                <p class="contact_info">Phone: <a href="tel:9175931708">+91-9175 9317 08</a></p>
+                <p class="contact_info">Business E-mail: <a href="mailto:arjunabhy1708@gmail.com">arjunabhy1708@gmail.com</a></p>
+            </div>
+            <div class="left-foot">
+                <a href="https://www.linkedin.com/in/arjun-abhyankar-298884384/" target="_blank">
+                    <img src="/25a01054_Portfolio/image assets/linkedin_logo.png" class="social-icon">
+                </a>
+                <a href="https://www.instagram.com/arkjuenem/" target="_blank">
+                    <img src="/25a01054_Portfolio/image assets/insta_logo.png" class="social-icon">
+                </a>
+                <a href="https://github.com/LilKombucha1809" target="_blank">
+                    <img src="/25a01054_Portfolio/image assets/github_logo.png" class="social-icon">
+                </a>
+            </div>
+            <div class="credit">
+                <p>© 2025 Designed & Built by <span class="highlight">Arjun Abhyankar</span></p>
+            </div>
+        </footer>
+
+        <script>
+            const faders = document.querySelectorAll('.fade-in');
+
+            const appearOptions = {
+                threshold: 0.2
+            };
+
+            const appearOnScroll = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if(entry.isIntersecting){
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, appearOptions);
+
+            faders.forEach(fader => {
+                appearOnScroll.observe(fader);
+            });
+        </script>
+    </body>
+</html>
